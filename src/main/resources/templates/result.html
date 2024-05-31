@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Search Results</title>
+</head>
+<body>
+<h1>Search Results</h1>
+<!--<div th:if="${users.isEmpty()}">-->
+<!--    <p>No matching users found.</p>-->
+<!--    <p>Or write to </p>-->
+<!--</div>-->
+
+<div th:if="${!users.isEmpty()}">
+    <ul>
+        <li th:each="user : ${users}">
+            <p>Id: <span th:text="${user.id}"></span></p>
+            <p>Name: <span th:text="${user.firstName}"></span></p>
+            <p>Surname: <span th:text="${user.lastName}"></span></p>
+            <p>Age: <span th:text="${user.age}"></span></p>
+            <p>Professions:</p>
+            <ul>
+                <li th:each="profession : ${user.professions}">
+                    <span th:text="${profession.title}"></span>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<a href="/">Back to search</a>
+</body>
+</html>

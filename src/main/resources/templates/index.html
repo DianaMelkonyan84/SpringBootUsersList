@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Search Users</title>
+</head>
+<body>
+<h1>Search Users</h1>
+<form action="/search" method="post">
+    <input type="text" name="input" placeholder="Enter name, surname, or street"/>
+    <button type="submit">Search</button>
+</form>
+<div th:if="${error}">
+    <p th:text="${error}" style="color: red;"></p>
+</div>
+</body>
+</html>
